@@ -19,4 +19,3 @@ router.put('/attendance/:id', authenticateToken, updateAttendance);
 router.delete('/attendance/:id', authenticateToken, deleteAttendance);
 
 module.exports = router;
-
