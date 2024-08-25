@@ -1,6 +1,4 @@
-const Product = require('../models/attendance');
-
-const Attendance = require('../models/attendance'); 
+const Attendance = require('../models/attendance');
 
 // getAttendances -- get All Attendances
 exports.getAttendances = async (req, res) => {
@@ -54,7 +52,7 @@ exports.updateAttendance = async (req, res) => {
     try {
         const { id } = req.params; // เปลี่ยนจาก req.param เป็น req.params
         const data = { $set: req.body };
-        const attendance = await Attendance.findByIdAndUpdate(id, data, { new: true }); 
+        const attendance = await Attendance.findByIdAndUpdate(id, data, { new: true });
         if (!attendance) return res.status(404).json({ message: 'Attendance not found' });
         res.status(200).json(attendance);
     } catch (err) {
